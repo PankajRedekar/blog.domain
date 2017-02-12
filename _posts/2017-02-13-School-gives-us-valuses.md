@@ -2,6 +2,7 @@
 layout: post
 title: School gives us values...
 author: Pankaj Redekar
+tag: Social
 ---
 
 School life is very important part of one's life, because it provides opportunity for study and discipline. 
