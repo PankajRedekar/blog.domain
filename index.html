@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+{% include start.html %}
+
+ {% for post in paginator.posts %}
+                <article class="post post-item masonry-item col-lg-4 col-sm-6 col-xs-12">
+                    <div class="post-photo">
+                        <img src="assets/img/photos/{{post.title}}.jpg" alt="...">
+                    </div>
+                    <div class="post-content animated" data-animation="fadeInUp">
+                        <div class="meta">
+                            <span><i class="fa fa-comment"></i><a href="#">4</a></span>
+                            <span><i class="fa fa-user"></i><a href="#">John Doe</a></span>
+                            <span><i class="fa fa-tag"></i><a href="#">Webdevelopment</a></span>
+                        </div>
+                        <div class="date">{{ post.date | date_to_string }}</div>
+                        <h1><a href="{% if site.baseurl == "/" %}{{ post.url }}{% else %}{{ post.url | prepend: site.baseurl }}{% endif %}">{{post.title}}</a></h1>
+                        <p>{{ post.content | strip_html | truncatewords:50 }}</p>
+                        <a href="{% if site.baseurl == "/" %}{{ post.url }}{% else %}{{ post.url | prepend: site.baseurl }}{% endif %}" class="btn btn-primary btn-xs"><span>Read more</span><i class="ti-arrow-right"></i></a>
+                    </div>
+                </article>
+             {% endfor %}  
+
+{% include mobile_nav.html %}
